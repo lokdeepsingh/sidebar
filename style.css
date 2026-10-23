@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.main_box {
+  background: url("photo.jpg") no-repeat center / cover;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#check {
+  display: none;
+}
+
+/* open button */
+.btn_one {
+  position: absolute;
+  left: 16px;
+  top: 0;
+  color: white;
+  font-size: 30px;
+  line-height: 60px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+/* sidebar */
+.sidebar_menu {
+  position: fixed;
+  top: 0;
+  left: -300px;               /* hidden by default */
+  height: 100vh;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  transition: left 0.4s ease;
+}
+
+/* toggle logic */
+#check:checked ~ .sidebar_menu {
+  left: 0;
+}
+#check:checked ~ .btn_one {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* close button */
+.sidebar_menu .btn_two {
+  position: absolute;
+  right: 16px;
+  top: 0;
+  font-size: 30px;
+  line-height: 60px;
+  cursor: pointer;
+}
+
+/* logo */
+.sidebar_menu .logo {
+  position: absolute;
+  width: 100%;
+  line-height: 60px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.sidebar_menu .logo a {
+  position: absolute;
+  left: 30px;
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* menu */
+.sidebar_menu .menu {
+  position: absolute;
+  width: 100%;
+  top: 80px;
+}
+.sidebar_menu .menu ul,
+.sidebar_menu .social_media ul {
+  list-style: none;
+}
+.sidebar_menu .menu li {
+  margin-top: 6px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 20px;
+  transition: background 0.2s;
+}
+.sidebar_menu .menu li:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.sidebar_menu .menu a {
+  color: white;
+  text-decoration: none;
+}
+.sidebar_menu .menu i {
+  padding-right: 8px;
+}
+
+/* social icons */
+.sidebar_menu .social_media {
+  position: absolute;
+  left: 25%;
+  bottom: 20px;
+}
+.sidebar_menu .social_media a {
+  color: white;
+  opacity: 0.5;
+  padding: 5px;
+  font-size: 20px;
+}
+.sidebar_menu .social_media a:hover {
+  opacity: 1;
+}
